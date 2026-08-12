@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Registration</title>
+    <link rel="stylesheet" href="css/forms.css">
+</head>
+<body>
+
+    <h1 align="center">User Registration Form</h1>
+    <hr>
+
+    <form action="/blogging-system/register.php" method="post" onsubmit="return validateRegister()">
+        <p>
+            <label>Full Name:</label><br>
+            <input type="text" name="fullname" id="fullname" size="40">
+        </p>
+
+        <p>
+            <label>Email:</label><br>
+            <input type="text" name="email" id="email" size="40">
+        </p>
+
+        <p>
+            <label>Username:</label><br>
+            <input type="text" name="username" id="username" size="40">
+        </p>
+
+        <p>
+            <label>Password:</label><br>
+            <input type="password" name="password" id="password" size="40">
+        </p>
+
+        <p>
+            <input type="submit" value="Register">
+            <input type="reset" value="Reset">
+        </p>
+    </form>
+
+    <script>
+        function validateRegister() {
+            var fullname = document.getElementById("fullname").value;
+            var email = document.getElementById("email").value;
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            if (fullname == "" || email == "" || username == "" || password == "") {
+                alert("All fields are required.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+
+</body>
+</html>

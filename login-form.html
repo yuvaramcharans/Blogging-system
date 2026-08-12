@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Login</title>
+    <link rel="stylesheet" href="css/forms.css">
+</head>
+<body>
+
+    <h1 align="center">User Login</h1>
+    <hr>
+
+    <form action="login.php" method="post" onsubmit="return validateLogin()">
+        <p>
+            <label>Username:</label><br>
+            <input type="text" name="username" id="username" size="40">
+        </p>
+
+        <p>
+            <label>Password:</label><br>
+            <input type="password" name="password" id="password" size="40">
+        </p>
+
+        <p>
+            <input type="submit" value="Login">
+            <input type="reset" value="Reset">
+        </p>
+    </form>
+
+    <script>
+        function validateLogin() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            if (username == "" || password == "") {
+                alert("Please enter username and password.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+
+</body>
+</html>

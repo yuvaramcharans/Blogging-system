@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact - Web Based Blogging System</title>
+    <link rel="stylesheet" href="css/forms.css">
+</head>
+<body>
+
+    <h1 align="center">Contact Us</h1>
+    <hr>
+
+    <form action="#" method="get" onsubmit="return validateContactForm()">
+        <p>
+            <label>Name:</label><br>
+            <input type="text" id="name" name="name" size="40">
+        </p>
+
+        <p>
+            <label>Email:</label><br>
+            <input type="text" id="email" name="email" size="40">
+        </p>
+
+        <p>
+            <label>Message:</label><br>
+            <textarea id="message" name="message" rows="6" cols="50"></textarea>
+        </p>
+
+        <p>
+            <input type="submit" value="Send Message">
+            <input type="reset" value="Reset">
+        </p>
+    </form>
+
+    <script>
+        function validateContactForm() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var message = document.getElementById("message").value;
+
+            if (name == "" || email == "" || message == "") {
+                alert("Please fill all contact form fields.");
+                return false;
+            }
+            alert("Message submitted successfully. Demo only.");
+            return true;
+        }
+    </script>
+
+</body>
+</html>

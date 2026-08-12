@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Blog Post</title>
+    <link rel="stylesheet" href="css/forms.css">
+</head>
+<body>
+
+    <h1 align="center">Add New Blog Post</h1>
+    <hr>
+
+    <form action="save_post.php" method="post" onsubmit="return validatePost()">
+        <p>
+            <label>Post Title:</label><br>
+            <input type="text" name="title" id="title" size="50">
+        </p>
+
+        <p>
+            <label>Category:</label><br>
+            <select name="category" id="category">
+                <option value="">-- Select Category --</option>
+                <option value="Technology">Technology</option>
+                <option value="Education">Education</option>
+                <option value="Travel">Travel</option>
+                <option value="Health">Health</option>
+            </select>
+        </p>
+
+        <p>
+            <label>Author Name:</label><br>
+            <input type="text" name="author" id="author" size="40">
+        </p>
+
+        <p>
+            <label>Content:</label><br>
+            <textarea name="content" id="content" rows="8" cols="60"></textarea>
+        </p>
+
+        <p>
+            <input type="submit" value="Publish Post">
+            <input type="reset" value="Reset">
+        </p>
+    </form>
+
+    <script>
+        function validatePost() {
+            var title = document.getElementById("title").value;
+            var category = document.getElementById("category").value;
+            var author = document.getElementById("author").value;
+            var content = document.getElementById("content").value;
+
+            if (title == "" || category == "" || author == "" || content == "") {
+                alert("Please fill all blog post fields.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+
+</body>
+</html>
